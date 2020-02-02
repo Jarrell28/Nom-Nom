@@ -1,0 +1,373 @@
+@font-face {
+    font-family: 'Lemon/Milk Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Lemon/Milk Regular'), url('../fonts/LemonMilk.woff') format('woff');
+}
+@font-face {
+    font-family: 'Lemon/Milk Regular italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Lemon/Milk Regular italic'), url('../fonts/LemonMilkitalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Lemon/Milk light italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Lemon/Milk light italic'), url('../fonts/LemonMilklightitalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Lemon/Milk Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Lemon/Milk Bold'), url('../fonts/LemonMilkbold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Lemon/Milk Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Lemon/Milk Bold'), url('../fonts/LemonMilkbolditalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Lemon/Milk light Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Lemon/Milk light Regular'), url('../fonts/LemonMilklight.woff') format('woff');
+}
+
+body {
+    position: relative;
+    background-color: #fed060;
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+.card-body {
+    background-color: #ffffff;
+    
+}
+
+.fade-out {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    top: 0;
+    background-color: #fed060;
+    text-align: center;
+    animation: fadeOut 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fade-out h1 {
+    font-family:"Lemon/Milk Regular";
+    font-size: 60px;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.ingredient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header {
+    margin-bottom: 10px;
+    
+}
+
+.cardOne {
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */ 
+    scroll-behavior: smooth;
+
+
+}
+
+.cardTwo {
+    overflow: hidden; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    scroll-behavior: smooth;
+
+}
+
+.card {
+    overflow-y: auto;
+    height: 500px;
+}
+
+.card-body {
+    position: relative;
+}
+
+
+.loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+.loader .pacman{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+}
+
+.pacman div:nth-child(1) {
+    border-top-color: #111111 !important;
+    border-left-color: #111111 !important;
+    border-bottom-color: #111111 !important;
+}
+
+.pacman div:nth-child(2) {
+    border-top-color: #111111 !important;
+    border-left-color: #111111 !important;
+    border-bottom-color: #111111 !important;
+}
+
+.pacman div:nth-child(3), .pacman div:nth-child(4), .pacman div:nth-child(5) {
+    background-color: #111111 !important;
+}
+
+@media screen and (min-width: 1200px){
+    .main-container {
+        max-width: 85% !important;
+    }
+}
+
+.btn-secondary {
+    padding:2vh;   
+}
+
+#burger {
+    display: inline-block;
+    margin-left: 25px;
+    margin-top: 10px;
+    font-size:40px;
+    cursor:pointer
+}
+
+#nnLogo {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100px;
+}
+
+#main-searches {
+    margin-top: 100px;
+}
+
+.nav-link {
+    color: rgb(255, 255, 255);
+}
+
+.userIcon {
+    position:absolute;
+    top:25px;
+    right:25px;
+}
+
+.userIcon img{
+    width: 40px;
+    height: auto;
+}
+
+
+.hpLogo {
+    width: 80px;
+    height: auto;
+    padding-left: 1rem;
+}
+
+.option-btn {
+    cursor: pointer;
+}
+
+footer {
+    background-color: #111111;
+    bottom: 0;
+    width: 100%; 
+    left: 0;
+    color: white; 
+    padding: 15px;
+}
+
+footer p {
+    text-align: center;
+}
+
+.button {
+    margin-top: 70vh;
+    margin-left: 75vh;
+    color: (86, 202, 86);
+}
+
+.btn-add {
+    margin-top: -4px;
+}
+
+#general-search, #ingredients-search {
+    margin: 0 auto;
+    display: inline-block;
+    width: 30%;
+
+}
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    color: #495057;
+    text-decoration: none;
+    background-color: #f8f9fa;
+}
+
+.ingredient {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ingredient p {
+    margin-bottom: 0;
+    font-size: 15px;
+    font-family: "Lemon/Milk Bold";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #111111;
+}
+
+.removeIngredient {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#ingredientsClear {
+    cursor: pointer;
+}
+
+.ingredients-container {
+    margin-bottom: 60px;
+    display: none;
+    
+}
+
+.sidenav{
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 15px;
+    transform: translateX(-250px);
+
+}
+
+.favorite {
+    cursor: pointer;
+}
+
+#myRecipes {
+    cursor: pointer;
+    color: #fff;
+}
+
+#myRecipes:hover {
+    color: #fed060;
+}
+
+.generalSearch, .ingredientSearch {
+    text-align: center;
+    
+}
+
+#current-recipe p{
+    font-size: 18px;
+}
+
+#current-recipe h3 {
+    margin: 35px 0 15px;
+}
+
+.sidenav a:hover {
+    color:#fed060;
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #fff;
+}
+
+.sidenav .closebtn:hover {
+    text-decoration: none;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+.main-result h3{
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+.main-result p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.googleBtn {
+    margin-top: 20px;
+}
+
+.layout-4, .layout-2, .layout-3 {
+
+    display: none; 
+  }
+
+li {
+    font-size: 14px;
+}
+
+.layout-1, .layout-2, .layout-3, .layout-4 {
+    margin-bottom: 40px;
+}
+
+.results-card {
+    min-height: 700px;
+    height: auto;
+}

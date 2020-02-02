@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="assets/images/nom_nom_logo.png">
+
+    <title>Nom Nom</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- CSS STyle Sheet -->
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/loaders.css">
+</head>
+
+<body>
+    <span onclick="openNav()" id="burger">&#9776;</span>
+    <nav id="mysidenav" class="sidenav">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a><img class="hpLogo" src="assets/images/nom_nom_logo.png" alt="nomNomLogo" id="Insert_logo" /></a>
+        <a class="nav-link mt-4" id="myRecipes">My Recipes</a>
+        <a href="login.html" class="nav-link mt-4" id="myRecipesSignedout">My Recipes</a>
+        <a href="login.html" id="loginLink" class="nav-link">Login</a>
+        <a href="login.html" id="logoutLink" class="nav-link">Logout</a>
+    </nav>
+
+    <div class="userIcon" id="userLoggedOut"><a href="login.html"><img src="assets/images/user-circle-solid.svg"
+                alt="user-icon"></a></div>
+
+    <div class="container text-center" id="main-searches">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary option-btn active" id="ingredientBtn">
+                <input type="radio" name="options" id="option1" class="option-btn" autocomplete="off" checked>
+                Ingredients Search
+            </label>
+            <label class="btn btn-secondary option-btn" id="browseBtn">
+                <input type="radio" name="options" id="option2" class="option-btn" autocomplete="off"> Browse Recipes
+            </label>
+            <label class="btn btn-secondary option-btn" id="generalBtn">
+                <input type="radio" name="options" id="option3" class="option-btn" autocomplete="off"> General Search
+            </label>
+        </div>
+    </div>
+    <div class="userIcon" id="userLoggedIn"><span id="user-email"></span> <img src="assets/images/user-circle-solid.svg"
+            alt="user-icon">
+    </div>
+
+    <a href="index.html"><img class="hpLogo" src="assets/images/nom_nom_logo.png" alt="nomNomLogo" id="nnLogo" /></a>
+
+    <!-- Fade out logo -->
+
+    <div class="fade-out">
+        <h1>Nom Nom</h1>
+        <img src="assets/images/nom_nom_logo.png" alt="nomNomLogo" style="width:25%" id="Insert_logo">
+    </div>
+
+    <br>
+
+    <!-- <div class="layout"> -->
+    <div class="layout-1">
+        <div class="container ingredientSearch">
+            <form action="" id="ingredient-form">
+                <input type="text" class="form-control" id="ingredients-search">
+                <button type="submit" class="btn btn-dark btn-add ingredient-add">Add</button>
+            </form>
+
+        </div>
+        <br>
+        <div class="main-container container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card cardOne">
+                        <div class="card-header ingredient-header">My Ingredients List<span
+                                id="ingredientsClear">Clear</span></div>
+                        <div class="card-body">
+                            <ul class="card-text list-group" id="ingredientsList"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="card cardTwo">
+                        <div class="card-header mb-0">Recipe Results</div>
+                        <div class="card-body p-0">
+                            <ul class="card-text list-group" id="ingredient-results"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="layout-2">
+        <div class="container browse-recipes">
+        </div>
+        <br>
+
+        <div class="container main-container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card cardOne cardTwo">
+                        <div class="card-header mb-0">Browse for a Recipe</div>
+                        <div class="card-body p-0">
+                            <ul class="card-text list-group" id="browse-results"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layout-3">
+        <div class="container generalSearch">
+            <form action="" id="search-form">
+                <input type="text" class="form-control" id="general-search">
+                <button type="submit" class="btn btn-dark btn-add">Search</button>
+            </form>
+        </div>
+        <br>
+        <div class="container main-container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card cardOne cardTwo">
+                        <div class="card-header mb-0">Recipe Results</div>
+                        <div class="card-body p-0">
+                            <ul class="card-text list-group" id="search-results"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layout-4">
+        <br>
+        <div class="container main-container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card cardOne cardTwo">
+                        <div class="card-header ingredient-header mb-0">Details<span id="favorites-clear">Clear</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <ul class="card-text list-group" id="favorite-results"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ingredients-container">
+        <br>
+        <div class="container main-container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card cardOne cardTwo results-card">
+                        <div class="card-header">Recipe Details</div>
+                        <div class="card-body">
+                            <div id="current-recipe">
+                                <div id="recipe-details"></div>
+                                <div id="ingredients"></div>
+                                <div id="instructions"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="googleModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document" style="max-width: 80%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Locations</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="position: relative;overflow: hidden;height: 500px;" id="map">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <footer>
+        <p>Brought to you by SMU Coding Bootcamp Group</p>
+    </footer> -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c48e179834.js" crossorigin="anonymous"></script>
+
+    <!-- Firebase Core JavaScript Link -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <!-- Specific Firebase products we want (Database) -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr9Pvzu3IdPGeBUSBN126B2v8fTGfBbww&libraries=places"></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
