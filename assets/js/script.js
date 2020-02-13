@@ -21,7 +21,7 @@ firebase.initializeApp(config);
 // Create a variable to reference the database
 var database = firebase.database();
 
-var API_KEY = 'f6b0191db074400e9f49de7c57844a19';
+var API_KEY = '4d398387f70a4f9998f7774f5ff18d19';
 
 //General Search Code 
 
